@@ -21,16 +21,16 @@ const manifest = {
   manifest_version: 3,
   default_locale: 'en',
   name: '__MSG_extensionName__',
-  browser_specific_settings: {
-    gecko: {
-      id: 'example@example.com',
-      strict_min_version: '109.0',
-    },
-  },
+  // browser_specific_settings: {
+  //   gecko: {
+  //     id: 'example@example.com',
+  //     strict_min_version: '109.0',
+  //   },
+  // },
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  host_permissions: ['<all_urls>'],
-  permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel'],
+  // host_permissions: ['<all_urls>'],
+  permissions: ['storage', 'sidePanel', 'contextMenus'],
   options_page: 'options/index.html',
   background: {
     service_worker: 'background.js',
@@ -38,32 +38,32 @@ const manifest = {
   },
   action: {
     default_popup: 'popup/index.html',
-    default_icon: 'icon-34.png',
+    default_icon: 'mouse-34.png',
   },
-  chrome_url_overrides: {
-    newtab: 'new-tab/index.html',
-  },
+  // chrome_url_overrides: {
+  //   newtab: 'new-tab/index.html',
+  // },
   icons: {
-    128: 'icon-128.png',
+    128: 'mouse-128.png',
   },
-  content_scripts: [
-    {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['content/index.iife.js'],
-    },
-    {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      js: ['content-ui/index.iife.js'],
-    },
-    {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-      css: ['content.css'],
-    },
-  ],
-  devtools_page: 'devtools/index.html',
+  // content_scripts: [
+  //   {
+  //     matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+  //     js: ['content/index.iife.js'],
+  //   },
+  //   {
+  //     matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+  //     js: ['content-ui/index.iife.js'],
+  //   },
+  //   {
+  //     matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+  //     css: ['content.css'],
+  //   },
+  // ],
+  // devtools_page: 'devtools/index.html',
   web_accessible_resources: [
     {
-      resources: ['*.js', '*.css', '*.svg', 'icon-128.png', 'icon-34.png'],
+      resources: ['*.js', '*.css', '*.svg', 'mouse-128.png', 'mouse-34.png'],
       matches: ['*://*/*'],
     },
   ],

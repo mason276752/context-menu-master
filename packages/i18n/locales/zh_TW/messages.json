@@ -1,0 +1,146 @@
+{
+  "extensionDescription": {
+    "description": "Extension description",
+    "message": "強化瀏覽器右鍵選單，整合 AI 對話、智慧搜尋與 Webhook 功能的瀏覽器擴充套件"
+  },
+  "extensionName": {
+    "description": "Extension name",
+    "message": "右鍵大師"
+  },
+  "toggleTheme": {
+    "message": "切換主題"
+  },
+  "loading": {
+    "message": "載入中..."
+  },
+  "greeting": {
+    "description": "Greeting message",
+    "message": "你好，我是 $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "小明"
+      }
+    }
+  },
+  "nav_home": {
+    "message": "主頁"
+  },
+  "nav_history": {
+    "message": "歷史記錄"
+  },
+  "nav_settings": {
+    "message": "設定"
+  },
+  "nav_general": {
+    "message": "一般設定"
+  },
+  "nav_advanced": {
+    "message": "進階設定"
+  },
+  "settings_theme": {
+    "message": "主題設定"
+  },
+  "settings_history": {
+    "message": "歷史記錄設定"
+  },
+  "settings_search": {
+    "message": "搜尋設定"
+  },
+  "settings_webhook": {
+    "message": "Webhook 設定"
+  },
+  "settings_ai": {
+    "message": "AI 設定"
+  },
+  "theme_light": {
+    "message": "淺色主題"
+  },
+  "theme_dark": {
+    "message": "深色主題"
+  },
+  "theme_toggle": {
+    "message": "切換主題"
+  },
+  "history_records": {
+    "message": "記錄"
+  },
+  "history_limit": {
+    "message": "最大記錄數"
+  },
+  "history_empty": {
+    "message": "尚無歷史記錄"
+  },
+  "history_copy": {
+    "message": "複製文字"
+  },
+  "history_copied": {
+    "message": "已複製到剪貼簿"
+  },
+  "search_add": {
+    "message": "新增搜尋引擎"
+  },
+  "search_name": {
+    "message": "引擎名稱"
+  },
+  "search_url": {
+    "message": "搜尋網址"
+  },
+  "search_template": {
+    "message": "查詢模板"
+  },
+  "ai_provider": {
+    "message": "AI 服務商"
+  },
+  "ai_model": {
+    "message": "模型"
+  },
+  "ai_key": {
+    "message": "API 金鑰"
+  },
+  "ai_prompt": {
+    "message": "提示詞模板"
+  },
+  "webhook_name": {
+    "message": "Webhook 名稱"
+  },
+  "webhook_url": {
+    "message": "Webhook 網址"
+  },
+  "webhook_method": {
+    "message": "HTTP 方法"
+  },
+  "webhook_headers": {
+    "message": "標頭"
+  },
+  "status_unexecuted": {
+    "message": "未執行"
+  },
+  "status_processing": {
+    "message": "處理中"
+  },
+  "status_success": {
+    "message": "成功"
+  },
+  "status_error": {
+    "message": "錯誤"
+  },
+  "action_save": {
+    "message": "儲存"
+  },
+  "action_cancel": {
+    "message": "取消"
+  },
+  "action_delete": {
+    "message": "刪除"
+  },
+  "action_edit": {
+    "message": "編輯"
+  },
+  "action_execute": {
+    "message": "執行"
+  },
+  "action_reexecute": {
+    "message": "重新執行"
+  }
+}

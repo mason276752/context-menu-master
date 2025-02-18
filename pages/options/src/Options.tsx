@@ -1,27 +1,66 @@
-import '@src/Options.css';
-import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
-import { exampleThemeStorage } from '@extension/storage';
-import { ToggleButton } from '@extension/ui';
-import { t } from '@extension/i18n';
+import { createHashRouter, RouterProvider } from 'react-router';
+import { withErrorBoundary, withSuspense } from '@extension/shared';
+import Main from './Main';
+import Layout from './Layout';
+import General from './pages/settings/General';
+import Advanced from './pages/settings/Advanced';
+import History from './pages/History';
+import HistoryDetail from './pages/HistoryDetail';
+import PromptDetail from './pages/history/PromptDetail';
+import WebhookDetail from './pages/history/WebhookDetail';
+import PromptWebhookDetail from './pages/history/PromptWebhookDetail';
+
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Main />,
+      },
+      {
+        path: '/history',
+        element: <History />,
+      },
+      {
+        path: '/history/:id',
+        element: <HistoryDetail />,
+      },
+      {
+        path: '/history/:id/prompt/:promptName',
+        element: <PromptDetail />,
+      },
+      {
+        path: '/history/:id/prompt/:promptName/webhook/:webhookId',
+        element: <PromptWebhookDetail />,
+      },
+      {
+        path: '/history/:id/webhook/:webhookId',
+        element: <WebhookDetail />,
+      },
+      {
+        path: '/setting',
+        element: <General />,
+      },
+      {
+        path: '/setting/general',
+        element: <General />,
+      },
+      {
+        path: '/setting/advanced',
+        element: <Advanced />,
+      },
+      {
+        path: '/nothing',
+        element: <div>Nothing</div>,
+      },
+    ],
+  },
+]);
 
 const Options = () => {
-  const theme = useStorage(exampleThemeStorage);
-  const isLight = theme === 'light';
-  const logo = isLight ? 'options/logo_horizontal.svg' : 'options/logo_horizontal_dark.svg';
-  const goGithubSite = () =>
-    chrome.tabs.create({ url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite' });
-
-  return (
-    <div className={`App ${isLight ? 'bg-slate-50 text-gray-900' : 'bg-gray-800 text-gray-100'}`}>
-      <button onClick={goGithubSite}>
-        <img src={chrome.runtime.getURL(logo)} className="App-logo" alt="logo" />
-      </button>
-      <p>
-        Edit <code>pages/options/src/Options.tsx</code>
-      </p>
-      <ToggleButton onClick={exampleThemeStorage.toggle}>{t('toggleTheme')}</ToggleButton>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default withErrorBoundary(withSuspense(Options, <div> Loading ... </div>), <div> Error Occur </div>);

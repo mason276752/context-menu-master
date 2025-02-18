@@ -1,11 +1,11 @@
 {
   "extensionDescription": {
     "description": "Extension description",
-    "message": "Chrome extension boilerplate developed with Vite, React and Typescript"
+    "message": "A powerful browser extension that enhances the context menu with AI services, smart search and webhook integration"
   },
   "extensionName": {
     "description": "Extension name",
-    "message": "Chrome extension boilerplate"
+    "message": "Context Menu Master"
   },
   "toggleTheme": {
     "message": "Toggle theme"
@@ -23,8 +23,124 @@
       }
     }
   },
-  "hello": {
-    "description": "Placeholder example",
-    "message": "Hello $1"
+  "nav_home": {
+    "message": "Home"
+  },
+  "nav_history": {
+    "message": "History"
+  },
+  "nav_settings": {
+    "message": "Settings"
+  },
+  "nav_general": {
+    "message": "General"
+  },
+  "nav_advanced": {
+    "message": "Advanced"
+  },
+  "settings_theme": {
+    "message": "Theme Settings"
+  },
+  "settings_history": {
+    "message": "History Settings"
+  },
+  "settings_search": {
+    "message": "Search Settings"
+  },
+  "settings_webhook": {
+    "message": "Webhook Settings"
+  },
+  "settings_ai": {
+    "message": "AI Settings"
+  },
+  "theme_light": {
+    "message": "Light Theme"
+  },
+  "theme_dark": {
+    "message": "Dark Theme"
+  },
+  "theme_toggle": {
+    "message": "Toggle Theme"
+  },
+  "history_records": {
+    "message": "Records"
+  },
+  "history_limit": {
+    "message": "Maximum Records"
+  },
+  "history_empty": {
+    "message": "No history records"
+  },
+  "history_copy": {
+    "message": "Copy text"
+  },
+  "history_copied": {
+    "message": "Copied to clipboard"
+  },
+  "search_add": {
+    "message": "Add Search Engine"
+  },
+  "search_name": {
+    "message": "Engine Name"
+  },
+  "search_url": {
+    "message": "Search URL"
+  },
+  "search_template": {
+    "message": "Query Template"
+  },
+  "ai_provider": {
+    "message": "AI Provider"
+  },
+  "ai_model": {
+    "message": "Model"
+  },
+  "ai_key": {
+    "message": "API Key"
+  },
+  "ai_prompt": {
+    "message": "Prompt Template"
+  },
+  "webhook_name": {
+    "message": "Webhook Name"
+  },
+  "webhook_url": {
+    "message": "Webhook URL"
+  },
+  "webhook_method": {
+    "message": "HTTP Method"
+  },
+  "webhook_headers": {
+    "message": "Headers"
+  },
+  "status_unexecuted": {
+    "message": "Not Executed"
+  },
+  "status_processing": {
+    "message": "Processing"
+  },
+  "status_success": {
+    "message": "Success"
+  },
+  "status_error": {
+    "message": "Error"
+  },
+  "action_save": {
+    "message": "Save"
+  },
+  "action_cancel": {
+    "message": "Cancel"
+  },
+  "action_delete": {
+    "message": "Delete"
+  },
+  "action_edit": {
+    "message": "Edit"
+  },
+  "action_execute": {
+    "message": "Execute"
+  },
+  "action_reexecute": {
+    "message": "Re-execute"
   }
 }

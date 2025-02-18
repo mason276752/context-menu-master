@@ -1,27 +1,49 @@
 import '@src/SidePanel.css';
-import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
+import { useStorage } from '@extension/shared';
+import { withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
-import { ToggleButton } from '@extension/ui';
-import { t } from '@extension/i18n';
+import { createHashRouter, RouterProvider } from 'react-router';
+import History from './components/history/History';
+import HistoryDetail from './components/history/HistoryDetail';
+import PromptDetail from './components/history/PromptDetail';
+import PromptWebhookDetail from './components/history/PromptWebhookDetail';
+import WebhookDetail from './components/history/WebhookDetail';
+
+const router = createHashRouter([
+  {
+    path: '/',
+    element: <History />,
+  },
+  {
+    path: '/history',
+    element: <History />,
+  },
+  {
+    path: '/history/:id',
+    element: <HistoryDetail />,
+  },
+  {
+    path: '/history/:id/prompt/:promptName',
+    element: <PromptDetail />,
+  },
+  {
+    path: '/history/:id/prompt/:promptName/webhook/:webhookId',
+    element: <PromptWebhookDetail />,
+  },
+  {
+    path: '/history/:id/webhook/:webhookId',
+    element: <WebhookDetail />,
+  },
+]);
 
 const SidePanel = () => {
   const theme = useStorage(exampleThemeStorage);
   const isLight = theme === 'light';
-  const logo = isLight ? 'side-panel/logo_vertical.svg' : 'side-panel/logo_vertical_dark.svg';
-  const goGithubSite = () =>
-    chrome.tabs.create({ url: 'https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite' });
-
   return (
-    <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
-      <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
-        <button onClick={goGithubSite}>
-          <img src={chrome.runtime.getURL(logo)} className="App-logo" alt="logo" />
-        </button>
-        <p>
-          Edit <code>pages/side-panel/src/SidePanel.tsx</code>
-        </p>
-        <ToggleButton onClick={exampleThemeStorage.toggle}>{t('toggleTheme')}</ToggleButton>
-      </header>
+    <div className={`flex h-screen w-screen ${isLight ? 'bg-slate-50 text-gray-900' : 'bg-gray-800 text-gray-100'}`}>
+      <div className="flex-1 overflow-auto">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 };
